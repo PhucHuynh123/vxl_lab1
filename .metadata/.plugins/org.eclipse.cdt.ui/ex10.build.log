@@ -1,0 +1,22 @@
+21:56:16 **** Build of configuration Debug for project ex10 ****
+make -j8 all 
+arm-none-eabi-gcc -o "ex10.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\labs_vxl\lab1\ex10\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ex10.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ex10.elf
+ 
+arm-none-eabi-size   ex10.elf 
+arm-none-eabi-objdump -h -S  ex10.elf  > "ex10.list"
+arm-none-eabi-objcopy  -O ihex  ex10.elf  "ex10.hex"
+   text	   data	    bss	    dec	    hex	filename
+   4964	     68	   1572	   6604	   19cc	ex10.elf
+arm-none-eabi-objcopy  -O binary  ex10.elf  "ex10.bin"
+Finished building: default.size.stdout
+ 
+Finished building: ex10.hex
+Finished building: ex10.bin
+Finished building: ex10.list
+ 
+ 
+ 
+
+21:56:16 Build Finished. 0 errors, 0 warnings. (took 702ms)
+
